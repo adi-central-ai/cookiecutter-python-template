@@ -1,7 +1,7 @@
 from invoke import task
 
-SRC = "backend/cai"
-TEST_SRC = "backend/tests"
+SRC = "."
+TEST_SRC = "tests/"
 
 
 @task
@@ -14,18 +14,18 @@ def showdeps(ctx):
 
 @task
 def lint(ctx):
-    ctx.run(f"poetry run black {SRC} {TEST_SRC} --check")
+    ctx.run(f"poetry run black {TEST_SRC} --check")
 
     print("\n-------------------------------")
 
-    ctx.run(f"poetry run ruff check {SRC} {TEST_SRC}")
+    ctx.run(f"poetry run ruff check {TEST_SRC}")
 
 
 @task
 def format(ctx):
-    ctx.run(f"poetry run black {SRC} {TEST_SRC}")
-    ctx.run(f"poetry run isort {SRC} {TEST_SRC}")
-    ctx.run(f"poetry run ruff --fix {SRC} {TEST_SRC}")
+    ctx.run(f"poetry run black {TEST_SRC}")
+    ctx.run(f"poetry run isort {TEST_SRC}")
+    ctx.run(f"poetry run ruff --fix {TEST_SRC}")
     ctx.run("poetry run mdformat README.md")
 
 
