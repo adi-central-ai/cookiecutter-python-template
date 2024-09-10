@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "cookiecutter-python_template"
+version = "0.1.0"
+description = """Cookiecutter template for a python projects."""
+authors = ["Parth Barhanpurkar <parth.barhanpurkar@analog.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+cookiecutter = "^2.2.0"
+flake8 = "^6.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = { version = "^23.1.0", allow-prereleases = true }
+pytest = "^7.2.1"
+pytest-cov = "^4.0.0"
+pytest-cookies = "^0.6.1"
+pytest-mock = "^3.3.1"
+pytest-xdist = "^2.1.0"
+typer-cli = "^0.0.13"
+mdformat = "^0.7.16"
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = "backend/tests"
+python_files = '*.py'
+
+# public pypi packgaes.
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "adi-pypi"
+url = "https://artifactory.analog.com/artifactory/api/pypi/adi-pypi-local/simple/"
+priority = "explicit"
+
+[tool.black]
+line-length = 110
+target-version = ["py310"]

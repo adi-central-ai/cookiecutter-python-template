@@ -1,0 +1,21 @@
+{
+    "full_name": "Central AI",
+    "email": "Central.ai@analog.com",
+    "namespace": "",
+    "module_name": "aiproject_python",
+    "python_version": "3.11",
+    "project_folder": "{{ cookiecutter.namespace + '-' + cookiecutter.module_name if cookiecutter.namespace else cookiecutter.module_name }}",
+    "short_description": "Python project of the Central AI team.",
+    "version": "0.1.0",
+    "use_jupyterlab": "n",
+    "use_ruff" : "y",
+    "use_flake8": "n",
+    "use_isort": "n",
+    "use_mypy": "n",
+    "use_bandit": "n",
+    "use_pylint": "n",
+    "use_precommit": "y",
+    "ci_use_cache": "n",
+    "create_dev_builds": "y",
+    "command_line_interface": ["cli", "no cli"]
+}
