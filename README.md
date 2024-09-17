@@ -11,7 +11,7 @@ Cookiecutter template configured with the following:
 - bandit
 - pre-commit
 - jupyterlab (optional)
-- CLI (optional)
+- CLI
 
 ## Install cookiecutter
 

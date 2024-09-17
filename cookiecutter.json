@@ -3,14 +3,11 @@
     "email": "Central.ai@analog.com",
     "namespace": "",
     "module_name": "aiproject_python",
-    "python_version": "3.11",
+    "python_version": "3.12",
     "project_folder": "{{ cookiecutter.namespace + '-' + cookiecutter.module_name if cookiecutter.namespace else cookiecutter.module_name }}",
     "short_description": "Python project of the Central AI team.",
     "version": "0.1.0",
     "use_jupyterlab": "n",
-    "use_flake8": "n",
-    "use_isort": "n",
     "ci_use_cache": "n",
-    "create_dev_builds": "y",
-    "command_line_interface": ["cli", "no cli"]
+    "create_dev_builds": "y"
 }

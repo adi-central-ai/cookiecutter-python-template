@@ -12,7 +12,7 @@ on:
         strategy:
           fail-fast: false
           matrix:
-            python-version: ["3.11"]
+            python-version: ${{cookiecutter.python_version}}
 
         steps:
           - name: Checkout code

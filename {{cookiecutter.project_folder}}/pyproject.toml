@@ -11,11 +11,9 @@ python = ">={{ cookiecutter.python_version }}, <3.13"
 {%- if cookiecutter.use_jupyterlab == "y" %}
 jupyterlab = "^3.0.0"
 {%- endif %}
-{%- if "{{ cookiecutter.command_line_interface|lower }}" == "cli" %}
-typer = "^0.12.3"
-{%- endif %}
 pydantic = "^1.10.7"
 fastapi = "^0.112.2"
+typer = "^0.12.3"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.4.4"
@@ -51,7 +49,3 @@ priority = "primary"
 name = "adi-pypi"
 url = "https://artifactory.analog.com/artifactory/api/pypi/adi-pypi-local/simple/"
 priority = "explicit"
-
-[tool.black]
-line-length = 110
-target-version = ["py310"]
