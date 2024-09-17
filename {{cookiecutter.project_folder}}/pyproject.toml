@@ -7,44 +7,22 @@ readme = "README.md"
 packages = [{include =  "{{ cookiecutter.namespace + '/' + cookiecutter.module_name if cookiecutter.namespace else cookiecutter.module_name }}"}]
 
 [tool.poetry.dependencies]
-python = ">={{ cookiecutter.python_version }}, <3.12"
+python = ">={{ cookiecutter.python_version }}, <3.13"
 {%- if cookiecutter.use_jupyterlab == "y" %}
 jupyterlab = "^3.0.0"
 {%- endif %}
 {%- if "{{ cookiecutter.command_line_interface|lower }}" == "cli" %}
-typer-cli = "^0.0.13"
+typer = "^0.12.3"
 {%- endif %}
-{%- if cookiecutter.use_mypy == "y" %}
 pydantic = "^1.10.7"
-{%- endif %}
+fastapi = "^0.112.2"
 
 [tool.poetry.group.dev.dependencies]
-black = {version = "^23.1.0", allow-prereleases = true}
-{%- if cookiecutter.use_isort == "y" %}
-isort = "^5.12.0"
-{%- endif %}
-{%- if cookiecutter.use_ruff == "y" %}
 ruff = "^0.4.4"
-{%- endif %}
-{%- if cookiecutter.use_flake8 == "y" %}
-flake8 = "^6.0.0"
-pyproject-flake8 = "^6.0.0"
-{%- endif %}
-{%- if cookiecutter.use_mypy == "y" %}
 mypy = "^0.991"
-{%- endif %}
-{%- if cookiecutter.use_bandit == "y" %}
 bandit = "^1.7.4"
-{%- endif %}
-{%- if cookiecutter.use_pylint == "y" %}
-pylint = "^2.16.1"
-astroid = "^2.14.1"
-{%- endif %}
-{%- if cookiecutter.use_precommit == "y" %}
 pre-commit = "^3.0.4"
-{%- endif %}
 toml = "^0.10.2"
-types-pyyaml = "^6.0.12.6"
 types-toml = "^0.10.1"
 typing_extensions = "^4.4.0"
 pymdown-extensions = "^9.9.2"
@@ -53,11 +31,8 @@ pytest-cov = "^4.0.0"
 pytest-cookies = "^0.6.1"
 pytest-mock = "^3.3.1"
 pytest-xdist = "^2.1.0"
-typer-cli = "^0.0.13"
 mdformat = "^0.7.16"
 invoke = "^2.2.0"
-toml = "^0.10.0"
-types-toml = "^0.10.0"
 
 [build-system]
 requires = ["poetry_core>=1.0.0"]

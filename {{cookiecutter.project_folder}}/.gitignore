@@ -16,7 +16,6 @@ __pycache__/
 /sandbox
 build
 venv
-poetry.lock
 
 # Installer logs
 pip-log.txt

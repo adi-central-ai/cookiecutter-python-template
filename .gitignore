@@ -13,4 +13,3 @@ htmlcov
 .mypy_cache
 .venv
 coverage.xml
-poetry.lock

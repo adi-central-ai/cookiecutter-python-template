@@ -22,11 +22,3 @@ if __name__ == "__main__":
         os.system('echo "Installing pre-commit hooks... \n"')
         os.system("pre-commit install")
         os.system('echo "Running pre-commit hooks... \n"')
-
-
-    if "{{ cookiecutter.use_github_actions }}" != "y":
-        remove_dir(".github")
-
-    if "{{ cookiecutter.use_docker }}" != "y":
-        remove_file("Dockerfile")
-        remove_file("docker-compose.yml")

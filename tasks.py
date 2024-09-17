@@ -14,17 +14,14 @@ def showdeps(ctx):
 
 @task
 def lint(ctx):
-    ctx.run(f"poetry run black {TEST_SRC} --check")
-
     print("\n-------------------------------")
 
     ctx.run(f"poetry run ruff check {TEST_SRC}")
+    ctx.run(f"poetry run mypy {TEST_SRC}")
 
 
 @task
 def format(ctx):
-    ctx.run(f"poetry run black {TEST_SRC}")
-    ctx.run(f"poetry run isort {TEST_SRC}")
     ctx.run(f"poetry run ruff --fix {TEST_SRC}")
     ctx.run("poetry run mdformat README.md")
 
