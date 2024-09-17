@@ -10,7 +10,6 @@ python = ">=3.11,<3.13"
 cookiecutter = "^2.2.0"
 
 [tool.poetry.group.dev.dependencies]
-black = { version = "^23.1.0", allow-prereleases = true }
 mypy = "^0.991"
 pytest = "^8.0.0"
 pytest-cov = "^4.0.0"
@@ -38,7 +37,3 @@ python_files = 'tests/*.py'
 [[tool.poetry.source]]
 name = "PyPI"
 priority = "primary"
-
-[tool.black]
-line-length = 110
-target-version = ["py312"]
