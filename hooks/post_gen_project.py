@@ -18,3 +18,12 @@ if __name__ == "__main__":
 
     if "{{ cookiecutter.use_jupyterlab }}" != "n":
         make_dir("notebooks")
+
+    if len("{{ cookiecutter.namespace }}") !=0:
+        make_dir("{{cookiecutter.namespace}}")
+
+    if "{{ cookiecutter.module_name }}" != 0:
+        if len("{{ cookiecutter.namespace }}") != 0:
+            make_dir("{{cookiecutter.namespace}}/{{cookiecutter.module_name}}")
+        else:
+            make_dir("{{cookiecutter.module_name}}")
