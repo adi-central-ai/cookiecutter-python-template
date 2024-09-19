@@ -30,7 +30,7 @@ brew install cookiecutter
 Templates can be directly cloned from Github using:
 
 ```bash
-cookiecutter https://github.com/adi-central-ai/cookiecutter-python-template.git --checkout dev
+cookiecutter https://github.com/adi-central-ai/cookiecutter-python-template.git
 ```
 
 The templates will be stored in the folder:
