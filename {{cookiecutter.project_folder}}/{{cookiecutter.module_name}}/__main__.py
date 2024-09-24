@@ -8,5 +8,5 @@ import typer
 
 app = typer.Typer(help="{{cookiecutter.short_description}}")
 
-if __name__ == "__main":
+if __name__ == "__main__":
     app()
