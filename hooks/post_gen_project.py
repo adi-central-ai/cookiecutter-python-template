@@ -1,4 +1,5 @@
 import os
+import shutil
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
@@ -21,9 +22,4 @@ if __name__ == "__main__":
 
     if len("{{ cookiecutter.namespace }}") !=0:
         make_dir("{{cookiecutter.namespace}}")
-
-    if "{{ cookiecutter.module_name }}" != 0:
-        if len("{{ cookiecutter.namespace }}") != 0:
-            make_dir("{{cookiecutter.namespace}}/{{cookiecutter.module_name}}")
-        else:
-            make_dir("{{cookiecutter.module_name}}")
+        shutil.move("{{cookiecutter.module_name}}", "{{cookiecutter.namespace}}/{{cookiecutter.module_name}}")
