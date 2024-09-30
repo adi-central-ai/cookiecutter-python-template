@@ -6,37 +6,38 @@ on:
   pull_request:
     branches: "**"
 
-    jobs:
-      test:
-        runs-on: ubuntu-latest
-        strategy:
-          fail-fast: false
-          matrix:
-            python-version: ${{cookiecutter.python_version}}
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["{{cookiecutter.python_version}}"]
 
-        steps:
-          - name: Checkout code
-            uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-          - name: Set up Python
-            uses: actions/setup-python@v5
-            with:
-              python-version: ${{ cookiecutter.python_version }}
+      - name: Set up Python {{cookiecutter.python_version}}
+        uses: actions/setup-python@v5
+        with:
+          python-version:
+            - " {{cookiecutter.python_version}} "
 
-          - name: Install dependencies
-            run: |
-              python -m pip install --upgrade pip
-              python -m pip install --upgrade poetry setuptools anybadge wheel
-              poetry install
-              if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade poetry setuptools anybadge wheel
+          poetry install
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-          - name: Lint
-            run: poetry run invoke lint
-          - name: Test
-            run: poetry run invoke test
+      - name: Lint
+        run: poetry run invoke lint
+      - name: Test
+        run: poetry run invoke test
 
-          # - name: Upload test coverage
-          #   uses: actions/upload-artifact@v2
-          #   with:
-          #     name: coverage
-          #     path: coverage.xml
+      # - name: Upload test coverage
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: coverage
+      #     path: coverage.xml
