@@ -1,9 +1,5 @@
 from invoke import task
 
-SRC = "."
-TEST_SRC = "tests/"
-
-
 @task
 def showdeps(ctx):
     print("Current:")
@@ -16,13 +12,15 @@ def showdeps(ctx):
 def lint(ctx):
     print("\n-------------------------------")
 
-    ctx.run(f"poetry run ruff check {TEST_SRC}")
-    ctx.run(f"poetry run mypy {TEST_SRC}")
+    ctx.run(f"poetry run ruff check .")
+    ctx.run("poetry run ruff format --check .")
+    ctx.run(f"poetry run mypy .")
 
 
 @task
 def format(ctx):
-    ctx.run(f"poetry run ruff --fix {TEST_SRC}")
+    ctx.run(f"poetry run ruff check --fix .")
+    ctx.run("poetry run ruff format .")
     ctx.run("poetry run mdformat README.md")
 
 
