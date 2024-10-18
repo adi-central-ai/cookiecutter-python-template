@@ -40,9 +40,6 @@ build-backend = "poetry.core.masonry.api"
 testpaths = "tests"
 python_files = 'tests/*.py'
 
-[tool.poetry]
-virtualenvs.in-project = true
-
 # public pypi packgaes.
 [[tool.poetry.source]]
 name = "PyPI"
