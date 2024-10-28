@@ -4,31 +4,31 @@ version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 readme = "README.md"
-packages = [{include =  "{{ cookiecutter.module_name }}", from = "{{ cookiecutter.namespace }}"}]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = ">={{ cookiecutter.python_version }}, <3.13"
 {%- if cookiecutter.use_jupyterlab == "y" %}
 jupyterlab = "^3.0.0"
 {%- endif %}
-pydantic = "^1.10.7"
-fastapi = "^0.112.2"
+pydantic = "^2.9.2"
+fastapi = "^0.115.2"
 typer = "^0.12.3"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.4.4"
-mypy = "^0.991"
+ruff = "^0.7.1"
+mypy = "^1.13.0"
 bandit = "^1.7.4"
-pre-commit = "^3.0.4"
+pre-commit = "^4.0.1"
 toml = "^0.10.2"
 types-toml = "^0.10.1"
 typing_extensions = "^4.4.0"
 pymdown-extensions = "^9.9.2"
 pytest = "^8.0.0"
-pytest-cov = "^4.0.0"
-pytest-cookies = "^0.6.1"
+pytest-cov = "^5.0.0"
+pytest-cookies = "^0.7.0"
 pytest-mock = "^3.3.1"
-pytest-xdist = "^2.1.0"
+pytest-xdist = "^3.6.0"
 mdformat = "^0.7.16"
 invoke = "^2.2.0"
 
