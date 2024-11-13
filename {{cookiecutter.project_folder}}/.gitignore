@@ -35,7 +35,8 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
-unit-test-report.xml
+unit-test-report.html
+assets/
 
 # Scrapy stuff:
 .scrapy
