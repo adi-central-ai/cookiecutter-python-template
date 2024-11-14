@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report-${{ github.run_number }}-${{ cookiecutter.python_version }}
-          path: coverage.html
+          path: htmlcov/index.html
 
       - name: Upload test report
         if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main'
