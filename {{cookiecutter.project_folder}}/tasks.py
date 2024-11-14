@@ -26,7 +26,7 @@ def format(ctx):
 
 @task
 def test(ctx):
-    ctx.run("poetry run pytest -v --cov")
+    ctx.run("poetry run pytest -v --cov --html=unit-test-report.html --cov-report=html")
 
 
 @task(pre=[lint, test])
