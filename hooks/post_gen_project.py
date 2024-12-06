@@ -17,6 +17,8 @@ def make_dir(path):
 
 
 if __name__ == "__main__":
+    make_dir(".github/workflows/")
+
     if "{{ cookiecutter.use_jupyterlab }}" != "y":
         remove_dir("notebooks")
 
