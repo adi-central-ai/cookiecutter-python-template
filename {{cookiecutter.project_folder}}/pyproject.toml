@@ -4,7 +4,6 @@ version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.short_description }}"
 authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
 python = ">={{ cookiecutter.python_version }}, <3.13"
